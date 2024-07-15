@@ -1,0 +1,12 @@
+                                     Table "public.products"
+     Column      |       Type       | Collation | Nullable |               Default                
+-----------------+------------------+-----------+----------+--------------------------------------
+ id              | integer          |           | not null | nextval('products_id_seq'::regclass)
+ name            | text             |           | not null | 
+ price           | double precision |           |          | 
+ can_be_returned | boolean          |           | not null | 
+Indexes:
+    "products_pkey" PRIMARY KEY, btree (id)
+Check constraints:
+    "products_price_check" CHECK (price > 0::double precision)
+
